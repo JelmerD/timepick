@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Timepick Plugin</title>
+
+    <link rel="stylesheet" href="../lib/css/jquery.timepick.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../lib/js/jquery.timepick.js"></script>
+    <script type="text/javascript">
+        // <![CDATA[
+        $(document).ready(function () {
+            $('#time-1').timepick();
+
+            $('#time-2').timepick({
+                altField: $('#alt-time-2')
+            });
+
+            $('#time-3').timepick({
+                onChange: function (value) {
+                    alert('Your selected time is ' + value[0] + ' minutes and ' + value[1] + ' seconds');
+                }
+            });
+
+            $('#time-4').timepick({
+                hours: [10,22],
+                minutes: [50,53]
+            });
+        });
+        // ]]>
+    </script>
+</head>
+<body>
+<h1>jQuery Timepick Plugin</h1>
+
+<form>
+    <h2>1. Default timepicker</h2>
+
+    <div>
+        <label for="time-1">Time</label><input id="time-1" name="time" type="text"/>
+    </div>
+
+    <h2>2. Alternate field</h2>
+
+    <div>
+        <label for="time-2">Time</label><input id="time-2" name="time" type="text"/>
+        <label for="alt-time-2">Alternate time field</label><input type="text" id="alt-time-2" disabled/>
+    </div>
+
+    <h2>3. On change</h2>
+
+    <div>
+        <label for="time-3">Time</label><input id="time-3" name="time" type="text"/>
+    </div>
+
+    <h2>4. Ranges</h2>
+
+    <div>
+        <label for="time-4">Time</label><input id="time-4" name="time" type="text"/>
+    </div>
+</form>
+</body>
+</html>
