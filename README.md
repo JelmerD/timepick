@@ -19,7 +19,7 @@ Usage
 
     $('#time').timepick({
         onChange: function (value) {
-            alert('Your selected time is ' + value[0] + ' minutes and ' + value[1] + ' seconds');
+            alert('Your selected time is ' + value[0] + ' hours and ' + value[1] + ' minutes');
         }
     });
 
